@@ -1,7 +1,7 @@
 #making the lists
-available_pizzas = ['margarita', 'pollo', '4cheese', 'bolognese', 'vegetarian']
+available_pizzas = ['pepperoni', 'beef & onion', '4cheese', 'bolognese', 'vegetarian']
 available_toppings = ['mushroom', 'onions', 'green pepper', 'extra cheese']
-pizza_prices = {'margarita': 5, 'pollo': 7, '4cheese': 6, 'bolognese': 8, 'vegetarian': 6.5}
+pizza_prices = {'pepperoni': 5, 'beef & onion': 7, '4cheese': 6, 'bolognese': 8, 'vegetarian': 6.5}
 topping_prices = {'mushroom':1, 'onions': 2, 'green pepper':3, 'extra cheese':4}
 sub_total = []
 final_order = {}
@@ -9,7 +9,7 @@ customer_adress = {}
 
 
 #ordering a pizza
-print("Hi, welcome to our text based pizza ordering")
+print("Hi, welcome to Henderson pizza's online text based ordering")
 order_pizza = True
 while order_pizza:    
     print("Please choose a pizza: ")
@@ -70,17 +70,17 @@ while order_pizza:
 #finalizing the order
 print(f"\nYour total order price is: ${sum(sub_total)}")
 
-print("Please provide us with your name, adress and phonenumber")
-customer_adress['name'] = input("what is your name?")
-customer_adress['street_name'] = input("What is your streetname and housenumber?")
-customer_adress['postalcode'] = input("What is the postalcode and cityname?")
-customer_adress['phonenumber'] = input("What is your phonenumber?")
+print("Please provide us with your name, address and phonenumber")
+customer_address['name'] = input("what is your name?")
+customer_address['street_name'] = input("What is your streetname and housenumber?")
+customer_address['postalcode'] = input("What is the postalcode and cityname?")
+customer_address['phonenumber'] = input("What is your phonenumber?")
 print()
-print(f"Thank you for your order {customer_adress['name']}.")
+print(f"Thank you for your order {customer_address['name']}.")
 print()
-print("We will deliver your order to this adres ASAP")
+print("We will deliver your order to this address ASAP")
 print()
-print(customer_adress['street_name'])
-print(customer_adress['postalcode'])
+print(customer_address['street_name'])
+print(customer_address['postalcode'])
 print()
-print(f"we will contact you on {customer_adress['phonenumber']} if anything comes up.")
+print(f"we will contact you on {customer_address['phonenumber']} if anything comes up.")
