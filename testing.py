@@ -1,15 +1,16 @@
-#making the lists
-available_pizzas = ['pepperoni', 'beef & onion', '4cheese', 'bolognese', 'vegetarian']
+# MAKING THE LIST
+available_pizzas = ['margarita', 'pepperoni', 'beef & onion', 'bolognese', 'vegetarian']
 available_toppings = ['mushroom', 'onions', 'green pepper', 'extra cheese']
-pizza_prices = {'pepperoni': 5, 'beef & onion': 7, '4cheese': 6, 'bolognese': 8, 'vegetarian': 6.5}
-topping_prices = {'mushroom':1, 'onions': 2, 'green pepper':3, 'extra cheese':4}
+pizza_prices = {'margarita': 5, 'pepperoni': 7, 'beef & onion': 6, 'bolognese': 8, 'vegetarian': 6.5}
+topping_prices = {'mushroom': 1, 'onions': 2, 'pepperoni': 3, 'extra cheese': 4}
 sub_total = []
 final_order = {}
 customer_adress = {}
 
 
-#ordering a pizza
-print("Hi, welcome to Henderson pizza's online text based ordering")
+
+# ORDERING A PIZZA
+print("Hi, welcome to Henderson's online text based pizza ordering")
 order_pizza = True
 while order_pizza:    
     print("Please choose a pizza: ")
@@ -26,7 +27,7 @@ while order_pizza:
         if pizza not in available_pizzas:
             print(f"I am sorry, we currently do not have {pizza}.")
 
-    #asking for extra toppings
+    # ASKING FOR EXTRA TOPPINGS
     order_topping = True
     print("This is the list of available extra toppings: ")
     for toppings in available_toppings:
@@ -67,7 +68,7 @@ while order_pizza:
                 if add_remove == "add":
                     check_order = False
 
-#finalizing the order
+# FINALIZING THE ORDER
 print(f"\nYour total order price is: ${sum(sub_total)}")
 
 print("Please provide us with your name, adress and phonenumber")
@@ -84,3 +85,8 @@ print(customer_adress['street_name'])
 print(customer_adress['postalcode'])
 print()
 print(f"we will contact you on {customer_adress['phonenumber']} if anything comes up.")   
+    
+
+    
+
+
