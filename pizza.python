@@ -1,13 +1,19 @@
-# MAKING THE LIST
-available_pizzas = ['margarita', 'pepperoni', 'beef & onion', 'bolognese', 'vegetarian']
-available_toppings = ['mushroom', 'onions', 'meat', 'extra cheese']
-pizza_prices = {'margarita': 5, 'pepperoni': 7, 'beef & onion': 6, 'bolognese': 8, 'vegetarian': 6.5}
-topping_prices = {'mushroom':1, 'onions': 2, 'meat': 3, 'extra cheese':4}
+import os
+
+available_pizzas = ['margarita', 'pollo', '4cheese', 'bolognese', 'vegetarian']
+available_toppings = ['mushroom', 'onions', 'green pepper', 'extra cheese']
+pizza_prices = {'margarita': 5, 'pollo': 7, '4cheese': 6, 'bolognese': 8, 'vegetarian': 6.5}
+topping_prices = {'mushroom':1, 'onions': 2, 'green pepper':3, 'extra cheese':4}
 sub_total = []
-final_order = {}
 customer_adress = {}
 
-
+def ShowMenu():
+    os.system('cls')
+    print("Available Pizzas:\n")
+    print(*available_pizzas,sep = ', ')
+    print("\n\nAvailable Topings:\n")
+    print(*available_toppings,sep = ', ')
+    print('\n\n')
 
 # ORDERING A PIZZA
 def greet(name):
@@ -23,7 +29,7 @@ while order_pizza:
         print(pizzas)
         print()
     while True:
-        pizza = input("which pizza would you like to order?")
+        pizza = input("which pizza would you like to order?\n")
         if pizza in available_pizzas:
             print(f"You have ordered a {pizza}.")
             sub_total.append(pizza_prices[pizza])
@@ -38,7 +44,7 @@ while order_pizza:
         print(toppings)
         print()
     while order_topping:
-        extra_topping = input("Would you like an extra topping? yes or no?")
+        extra_topping = input("Would you like an extra topping? yes or no?\n")
         if extra_topping == "yes" or extra_topping == "Yes" or extra_topping == "y" or extra_topping == "Y":
             topping = input("Which one would you like to add?")
             if topping in available_toppings:
@@ -89,3 +95,4 @@ print(customer_adress['street_name'])
 print(customer_adress['postalcode'])
 print()
 print(f"we will contact you on {customer_adress['phonenumber']} if anything comes up.")   
+
