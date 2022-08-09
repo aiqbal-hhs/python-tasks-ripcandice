@@ -6,6 +6,8 @@ pizza_prices = {'margarita': 5, 'pollo': 7, '4cheese': 6, 'bolognese': 8, 'veget
 topping_prices = {'mushroom':1, 'onions': 2, 'green pepper':3, 'extra cheese':4}
 sub_total = []
 customer_adress = {}
+final_order = {}
+
 
 def ShowMenu():
     os.system('cls')
@@ -46,7 +48,7 @@ while order_pizza:
     while order_topping:
         extra_topping = input("Would you like an extra topping? yes or no?\n")
         if extra_topping == "yes" or extra_topping == "Yes" or extra_topping == "y" or extra_topping == "Y":
-            topping = input("Which one would you like to add?")
+            topping = input("Which one would you like to add?\n")
             if topping in available_toppings:
                 final_order.setdefault(pizza, [])
                 final_order[pizza].append(topping)
@@ -57,22 +59,22 @@ while order_pizza:
 
         elif extra_topping == "no" or extra_topping == "No" or extra_topping == "n" or extra_topping == "N":
             break
-    extra_pizza = input("Would you like to order another pizza?")
+    extra_pizza = input("Would you like to order another pizza?\n")
     if extra_pizza == "no" or extra_pizza == "No" or extra_pizza == "n" or extra_pizza == "N":
         for key, value in final_order.items():
             print(f"\nYou have order a {key} pizza with {value}")
         check_order = True
         while check_order:
             print()
-            order_correct = input("Is this correct? yes/no ")
+            order_correct = input("Is this correct? yes/no \n")
             if order_correct == "yes" or order_correct == "Yes" or order_correct == "y" or order_correct == "Y": 
                 check_order = False
                 order_pizza = False
             if order_correct == "no" or order_correct == "No" or order_correct == "N" or order_correct == "n":
                 print(final_order)
-                add_remove = input("would you like to add or remove? ")
+                add_remove = input("would you like to add or remove?\n")
                 if add_remove == "remove":
-                    remove = input("Which pizza would you like to remove? ")
+                    remove = input("Which pizza would you like to remove?\n")
                     del final_order[remove]
                     print(final_order)
                 if add_remove == "add":
@@ -82,10 +84,10 @@ while order_pizza:
 print(f"\nYour total order price is: ${sum(sub_total)}")
 
 print("Please provide us with your name, adress and phonenumber")
-customer_adress['name'] = input("what is your name?")
-customer_adress['street_name'] = input("What is your streetname and housenumber?")
-customer_adress['postalcode'] = input("What is the postalcode and cityname?")
-customer_adress['phonenumber'] = int(input("What is your phonenumber?"))
+customer_adress['name'] = input("what is your name?\n")
+customer_adress['street_name'] = input("What is your streetname and housenumber?\n")
+customer_adress['postalcode'] = input("What is the postalcode and cityname?\n")
+customer_adress['phonenumber'] = int(input("What is your phonenumber?\n"))
 print()
 print(f"Thank you for your order {customer_adress['name']}.")
 print()
@@ -95,4 +97,6 @@ print(customer_adress['street_name'])
 print(customer_adress['postalcode'])
 print()
 print(f"we will contact you on {customer_adress['phonenumber']} if anything comes up.")   
+
+
 
