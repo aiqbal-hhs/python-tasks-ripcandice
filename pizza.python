@@ -1,9 +1,10 @@
 import os
 
-available_pizzas = ['margarita', 'pollo', '4cheese', 'bolognese', 'vegetarian']
-available_toppings = ['mushroom', 'onions', 'green pepper', 'extra cheese']
-pizza_prices = {'margarita': 5, 'pollo': 7, '4cheese': 6, 'bolognese': 8, 'vegetarian': 6.5}
-topping_prices = {'mushroom':1, 'onions': 2, 'green pepper':3, 'extra cheese':4}
+available_pizzas = ['Margarita', 'Pollo', 'Cheese', 'Bolognese', 'Vegetarian', 
+                    'Pepperoni', 'Meatlover', 'Supreme', 'Hawaiian', 'Capricciosa', 'Buffalo', 'Chicken']
+available_toppings = ['Mushroom', 'Onions', 'Green pepper', 'Extra cheese']
+pizza_prices = {'Margarita': 8.50, 'Pollo': 8.50, 'Cheese': 8.50, 'Bolognese': 8.50, 'Vegetarian': 8.50, 'Pepperoni': 8.50, 'Supreme': 8.50, 'Capricciosa': 5, 'Hawaiian': 5, 'Meatlover': 5, 'Buffalo': 5, 'Chicken': 5}
+topping_prices = {'Mushroom': 0.50, 'Onions': 0.50, 'Green pepper': 0.50, 'Extra cheese': 0.50}
 sub_total = []
 customer_adress = {}
 final_order = {}
@@ -96,7 +97,7 @@ print()
 print(customer_adress['street_name'])
 print(customer_adress['postalcode'])
 print()
-print(f"we will contact you on {customer_adress['phonenumber']} if anything comes up.")   
+print(f"we will contact you on {customer_adress['phonenumber']} if anything comes up.")     
 
 
 
