@@ -1,10 +1,10 @@
 import os
 
 available_pizzas = ['Margarita', 'Pollo', 'Cheese', 'Bolognese', 'Vegetarian', 
-                    'Pepperoni', 'Meatlover', 'Supreme', 'Hawaiian', 'Capricciosa', 'Buffalo', 'Chicken']
-available_toppings = ['Mushroom', 'Onions', 'Green pepper', 'Extra cheese']
-pizza_prices = {'Margarita': 8.50, 'Pollo': 8.50, 'Cheese': 8.50, 'Bolognese': 8.50, 'Vegetarian': 8.50, 'Pepperoni': 8.50, 'Supreme': 8.50, 'Capricciosa': 5, 'Hawaiian': 5, 'Meatlover': 5, 'Buffalo': 5, 'Chicken': 5}
-topping_prices = {'Mushroom': 0.50, 'Onions': 0.50, 'Green pepper': 0.50, 'Extra cheese': 0.50}
+                    'Pepperoni', 'Meatlover', 'Supreme', 'Hawaiian', 'Capricciosa', 'Buffalo Chicken', 'Butter Chicken']
+available_toppings = ['Mushroom', 'Onions', 'Green Pepper', 'Extra Cheese']
+pizza_prices = {'Margarita': 8.50, 'Pollo': 8.50, 'Cheese': 8.50, 'Bolognese': 8.50, 'Vegetarian': 8.50, 'Pepperoni': 8.50, 'Supreme': 8.50, 'Capricciosa': 5, 'Hawaiian': 5, 'Meatlover': 5, 'Buffalo Chicken': 5, 'Butter Chicken': 5}
+topping_prices = {'Mushroom': 0.50, 'Onions': 0.50, 'Green Pepper': 0.50, 'Extra Cheese': 0.50}
 sub_total = []
 customer_adress = {}
 final_order = {}
@@ -32,7 +32,7 @@ while order_pizza:
         print(pizzas)
         print()
     while True:
-        pizza = input("which pizza would you like to order?\n")
+        pizza = input("which pizza would you like to order?\n").title()
         if pizza in available_pizzas:
             print(f"You have ordered a {pizza}.")
             sub_total.append(pizza_prices[pizza])
@@ -49,7 +49,7 @@ while order_pizza:
     while order_topping:
         extra_topping = input("Would you like an extra topping? yes or no?\n")
         if extra_topping == "yes" or extra_topping == "Yes" or extra_topping == "y" or extra_topping == "Y":
-            topping = input("Which one would you like to add?\n")
+            topping = input("Which one would you like to add?\n").title()
             if topping in available_toppings:
                 final_order.setdefault(pizza, [])
                 final_order[pizza].append(topping)
@@ -82,13 +82,13 @@ while order_pizza:
                     check_order = False
 
 # FINALIZING THE ORDER
-print(f"\nYour total order price is: ${sum(sub_total)}")
+print(f"\nYour total order price is: ${sum(sub_total)} + $3 delivery fee")
 
 print("Please provide us with your name, adress and phonenumber")
 customer_adress['name'] = input("what is your name?\n")
 customer_adress['street_name'] = input("What is your streetname and housenumber?\n")
 customer_adress['postalcode'] = input("What is the postalcode and cityname?\n")
-customer_adress['phonenumber'] = int(input("What is your phonenumber?\n"))
+customer_adress['phonenumber'] = input("What is your phonenumber?\n")
 print()
 print(f"Thank you for your order {customer_adress['name']}.")
 print()
